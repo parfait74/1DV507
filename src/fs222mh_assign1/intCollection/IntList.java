@@ -1,9 +1,10 @@
+package fs222mh_assign1.intCollection;
 /*
  * IntList.java
  * Date: 23 nov 2007
  * Author: Jonas Lundberg
  */
-package da1031;
+
 
 import java.lang.IndexOutOfBoundsException;
 
