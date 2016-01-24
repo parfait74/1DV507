@@ -5,7 +5,7 @@ public class Bicycle extends Vehicle{
 	private final int costPass = 0;		// Passenger included in cost for bicycle
 	private final int costVehicle = 40;	// Cost for the bicycle to embark the ferry
 	private final int pMax = 1;			// Max number of passengers
-	private final int vSize = 1/5;		// Size of bicycle, 1/5 of a car
+	private final int vSize = 1;		// Size of bicycle
 	
 	public Bicycle(int p) {
 		if (p > pMax) {

@@ -15,7 +15,7 @@ public class JollyRoger implements IntFerry {
 	public int countPassengers() {
 		int pSum = 0;									// Total nbr of passengers
 		
-		for (int i = 0; i < pPass.size(); i += 1) {		// Loopt through passengers without vehicle
+		for (int i = 0; i < pPass.size(); i += 1) {		// Loop through passengers without vehicle
 			pSum += pPass.get(i).getPass();
 		}
 		
@@ -51,7 +51,22 @@ public class JollyRoger implements IntFerry {
 
 	@Override
 	public Iterator<Vehicle> iterator() {
-		return null;
+		Iterator<Vehicle> it = new Iterator<Vehicle>() {
+	           
+			private int iteratorIndex = 0;
+            
+           public boolean hasNext() {
+                return iteratorIndex < pVehicle.size();		// Return true if iterator index(iteratorIndex) are less then arraylist pVehicle
+       	    }
+            
+            public Vehicle next() {							// Return next object in array
+                iteratorIndex++;
+                return pVehicle.get(iteratorIndex);
+            }
+            
+        };
+        return it;
+		
 	}
 
 	@Override
@@ -86,7 +101,7 @@ public class JollyRoger implements IntFerry {
 	@Override
 	public boolean hasSpaceFor(Vehicle v) {
 		
-		if (v.getSize() + countVehicleSpace() <= 40){	// Check vehicle size and if current total vehicle size is below 40	
+		if (v.getSize() + countVehicleSpace() <= 200){	// Check vehicle size and if current total vehicle size is below 40 cars (200 bicycles)	
 			return true;
 		} else {
 			return false;
@@ -95,7 +110,7 @@ public class JollyRoger implements IntFerry {
 
 	@Override
 	public boolean hasRoomFor(Passenger p) {
-		if (countPassengers() <= 200) {	// Check numbers of passengers and if current total is below 200
+		if (p.getPass() + countPassengers() <= 200) {	// Check numbers of passengers and if current total is below 200
 			return true;		
 		} else {
 			return false;
