@@ -9,10 +9,11 @@ public class FerryMain {
 		Scanner input = new Scanner(System.in);
 		JollyRoger ferry = new JollyRoger();
 		
+		// setup to make it easier to add different items (vehicles and passengers)
 		int val = 0;
 		int pVal = 0;
 		
-		boolean loop = true;
+		boolean loop = true;					// set to true initially to start the loop, not 100% sure it's the best way
 		while (loop == true) {
 			System.out.println("Choose what you want to do: \n1: Embark Vehicle \n2: Embark only passenger \n3: Disembark \n4: Show me the money! \n5: abort");
 			System.out.print("Your Choice: ");
@@ -83,7 +84,7 @@ public class FerryMain {
 				System.out.println("Space occupied by vehicles: " + ferry.countVehicleSpace() + "\n");
 				break;
 				
-			case 4:
+			case 4: // Splitting so you can get the total money earned and the money for the trip in progress
 				System.out.println("Choose : \n1: Money for this trip \n2: Total money after completed disembarkments");
 				System.out.print("Your Choice: ");
 				val = input.nextInt();
@@ -98,7 +99,7 @@ public class FerryMain {
 				}
 				break;
 								
-			case 5:
+			case 5: // Need to have a way to break the loop manually
 				loop = false;
 				System.out.print("Program has been aborted by user!");
 				
