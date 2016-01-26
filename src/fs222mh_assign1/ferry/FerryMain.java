@@ -15,7 +15,7 @@ public class FerryMain {
 		
 		boolean loop = true;					// set to true initially to start the loop, not 100% sure it's the best way
 		while (loop == true) {
-			System.out.println("Choose what you want to do: \n1: Embark Vehicle \n2: Embark only passenger \n3: Disembark \n4: Show me the money! \n5: abort");
+			System.out.println("Choose what you want to do: \n1: Embark Vehicle \n2: Embark passenger only \n3: Disembark \n4: Show me the money! \n5: abort");
 			System.out.print("Your Choice: ");
 			val = input.nextInt();
 			switch (val) {
