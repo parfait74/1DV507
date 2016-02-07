@@ -42,7 +42,7 @@ public class QueueMain {
 		System.out.println(lQ.dequeue());
 		
 		
-		//Not entirely sure I'm supposed to catch the errors, but unchecked exception it says
+		//Not entirely sure I'm supposed to catch the errors here or just use the exception in the code, but unchecked exception it says
 		try {
 			lQ.dequeue();
 		}
