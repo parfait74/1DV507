@@ -20,6 +20,13 @@ public class PrintJavaMain {
 
 	}
 	
+	
+	/**
+	 * 
+	 * @param path - path to the directory to chech for javafiles
+	 * @throws IOException
+	 */
+	
 	public static void printAllJavaFiles(String path) throws IOException {
 		
 		File directory = new File(path);
@@ -37,6 +44,13 @@ public class PrintJavaMain {
 		
 	}
 	
+	
+	/**
+	 * 
+	 * @param aFile - the file to check for number of rows(lines)
+	 * @return - number of lines
+	 * @throws IOException
+	 */
 	public static int countRows(File aFile) throws IOException { // got inspiration from http://kodejava.org/how-do-i-use-linenumberreader-class-to-read-file/
 	    LineNumberReader input = null;						// set to null
 	    try {

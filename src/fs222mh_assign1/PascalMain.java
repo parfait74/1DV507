@@ -17,6 +17,8 @@ public class PascalMain {
 	       input.close();
 	   }
 	
+	// Methods
+	
 	public static int[] PascalRow(int rows) {					// recursive function, calls on itself and then calculates the pascalrows from the beginning
 		
 		if (rows == 0) {										// first row has no previous row
