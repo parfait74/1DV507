@@ -24,7 +24,7 @@ public class HistogramGui extends Application {
 	// Constructor
 	public HistogramGui() {
 		
-		// Using PieChart since I know how to :)
+		// Using PieChart since I tried it before at work
 		chartData = FXCollections.observableArrayList(
 		new PieChart.Data("1-10", 0),
 		new PieChart.Data("11-20", 0),
@@ -46,7 +46,7 @@ public class HistogramGui extends Application {
 		 FileChooser choose = new FileChooser();
 		 choose.getExtensionFilters().add(new ExtensionFilter("Plain text file", "*.txt"));
 		 
-		 // Fiddling with menu
+		 // Creating the menu
 		 MenuItem open = new MenuItem("Open");
 		 open.setOnAction((ActionEvent) -> {
 			file = choose.showOpenDialog(stage);

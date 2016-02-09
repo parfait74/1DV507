@@ -34,7 +34,7 @@ public class Histogram {
 		}
 		while (file.hasNextInt()) {
 			try {
-				counter[(file.nextInt() - 1) / 10] ++; // -1 means 0 becomes -1 and out of range, 100 becomes 99 and is fine. Allowed span 1-100.
+				counter[(file.nextInt() - 1) / 10] ++; // -1 means 0 becomes -1 and out of range, 100 becomes 99 and is fine. Allowed span 1-100. Otherwise the array needs to be 11 and not counting position 1(0)
 			}
 			catch (ArrayIndexOutOfBoundsException e) {
 				
