@@ -6,7 +6,6 @@ package fs222mh_assign2.ex5;
  */
 
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -20,8 +19,7 @@ public class UpDownPane extends Application {
 	
 	public void start(Stage theStage) {
 		theStage.setTitle("UpDownPane");
-		Group root = new Group();
-		BorderPane bp = new BorderPane();
+		BorderPane root = new BorderPane();
 		Scene theScene = new Scene(root, 860, 860);
 		theStage.setScene(theScene);
 		
@@ -35,8 +33,7 @@ public class UpDownPane extends Application {
 		
 		GridPane gp = new GridPane();
 		gp.setGridLinesVisible(true);
-		bp.setCenter(gp);
-		root.getChildren().add(bp);
+		root.setCenter(gp);
 		
 		//Create grids 7x7
 	    for(int row = maxRow; row > 0; row--)
@@ -117,6 +114,8 @@ public class UpDownPane extends Application {
 
 /*
  * Got the grid to represent 7x7. Need to make it pretty
+ * Can't figure out why it's not centered since I'm using borderpane
+ * To little time to troubleshoot, got the arrow key working so I'm happy :)
  * 
  * YES! lade till en ny class (IntValue) som håller int värdet, det kan jag manipulera som jag vill :) Den lösningen kommer jag återanvända.
  */ 
