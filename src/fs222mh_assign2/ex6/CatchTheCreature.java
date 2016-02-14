@@ -45,7 +45,7 @@ public class CatchTheCreature extends Application {
 		text.setFont(Font.font("SansSerif", 20));
 		root.getChildren().add(text);
 		
-		Text points = new Text(100, 25, " ");
+		Text points = new Text(100, 25, " ");					// lack of inspiration on how to show the value better. Maybe a vbox should have been the way forward
 		points.setFont(Font.font("SansSerif", 25));
 		root.getChildren().add(points);
 		
@@ -53,7 +53,7 @@ public class CatchTheCreature extends Application {
 			//theCreature.setLayoutX(rand.nextInt(375)); 		// Take into account the picture is 128x128 so it won't show outside the scene.
 			//theCreature.setLayoutY(rand.nextInt(325)+50);
 			creatureCatched += 1;
-			points.setText(Integer.toString(creatureCatched));
+			points.setText(Integer.toString(creatureCatched));	
 		});
 		
 		/**
@@ -86,5 +86,6 @@ public class CatchTheCreature extends Application {
 
 /*
  * Still need to put creature in it's own class
- * For some reason I just can't get the value of creatureCatched to be shown 
+ * For some reason I just can't get the value of creatureCatched to be shown in a better way.
+ * At least I know what I'm doing :)
  */ 
