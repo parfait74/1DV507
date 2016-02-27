@@ -14,11 +14,20 @@ public class Word implements Comparable<Word> {
 	
 	@Override
 	public int hashCode() {
-		int hash = 631;
-
+		
+		//this didn't work trying to sum up the ASCII, got really weird numbers most likely due to sum get's the same hash for words with the same letters in it
+		/*int hash = 0;
+		for (int i = 0; i < word.length(); i += 1) {
+			char c = word.toLowerCase().charAt(i);
+			hash += Character.getNumericValue(c);
+		}*/
+		
+		// Looked online for a solution to create a hash function, http://stackoverflow.com/questions/2624192/good-hash-function-for-strings
+		int hash = 222;
 		for (int i = 0; i < word.length(); i += 1) {
 			hash = ((hash << 5) + hash) + word.toLowerCase().charAt(i);
 		}
+		
 		return hash;
 	}
 	

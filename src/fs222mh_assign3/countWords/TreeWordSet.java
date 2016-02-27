@@ -1,3 +1,9 @@
+/**
+ * Treewordset. 
+ * Binary search tree is actually fun :)
+ * No duplication allowed
+ */
+
 package fs222mh_assign3.countWords;
 
 import java.util.Iterator;
@@ -16,7 +22,7 @@ public class TreeWordSet implements WordSet{
 	}
 	
 	/**
-	 * Own node class. 
+	 * private node class. Lectures gave a good insight how to do this
 	 */
 	private class Node {
 				
@@ -34,21 +40,21 @@ public class TreeWordSet implements WordSet{
 				return;
 			}
 
-			if(node.data.compareTo(data) == -1) {
+			if(node.data.compareTo(data) == -1) {		// add to left branch
 				
 				if(left == null) {
 					left = node;
 				}				
 				else {
-					left.addNode(node);
+					left.addNode(node);		// use recursion
 				}
 			}			
-			else {				
+			else {							// add to right branch
 				if(right == null) {
 					right = node;
 				}				
 				else {
-					right.addNode(node);
+					right.addNode(node); 	// use recursion
 				}
 			}
 		}
@@ -111,6 +117,9 @@ public class TreeWordSet implements WordSet{
 		
 	/**
 	 * TreeWordSet iterator.
+	 * Got information about using a stack at: 
+	 *  http://stackoverflow.com/questions/12850889/in-order-iterator-for-binary-tree,
+	 *  http://stackoverflow.com/questions/4581576/implementing-an-iterator-over-a-binary-search-tree
 	 */
 	@Override
 	public Iterator<Word> iterator() {
@@ -171,7 +180,7 @@ public class TreeWordSet implements WordSet{
 	}
 	
 	/**
-	 * Stack for keeping track of parents, should be self explain with push,pop an isEmpty
+	 * Stack for keeping track of parents, using push,pop and isEmpty
 	 */
 	private class TreeStack {
 		

@@ -11,12 +11,12 @@ public class HashWordSet implements WordSet{
 	 * Constructor
 	 */
 	public HashWordSet() {
-		buckets = new Node[256];
+		buckets = new Node[1];
 		size = 0;
 	}
 	
 	/**
-	 * Own Node Class
+	 * Own Node Class that is a linked list
 	 */
 	private class Node {
 		
@@ -41,12 +41,31 @@ public class HashWordSet implements WordSet{
 		
 		int bucketIndex = getIndex(word);	//find correct bucket
 		
-		Node node = new Node(word);
+		Node node = new Node(word);			// Not found, add new node as first entry
 		node.next = buckets[bucketIndex];
 		buckets[bucketIndex] = node;
 		
 		size += 1;
 		
+		if (size == buckets.length) {		// Rehash if needed
+			rehash();
+		}
+	}
+	
+	/**
+	 * Rehash function, more or less copied from lecture notes
+	 */
+	private void rehash() {
+		Node[] temp = buckets;
+		buckets = new Node[2 * temp.length];
+		size = 0;
+		for (Node n : temp) {
+			if(n == null) continue;
+			while(n != null) {
+				add(n.data);
+				n = n.next;
+			}
+		}
 	}
 
 	private int getIndex(Word word) {
@@ -68,14 +87,14 @@ public class HashWordSet implements WordSet{
 	public boolean contains(Word word) {
 		
 		int bucketIndex = getIndex(word); 	//find correct bucket
-		Node node = buckets[bucketIndex];
+		Node node = buckets[bucketIndex];	//First node in list
 		
 		// go through the list to see if there is a match.
 		while (node != null) {
 			if (node.data.equals(word)) {
-				return true;
+				return true;				// Word found
 			}
-			node = node.next;
+			node = node.next;				// Next node in list
 		}
 		return false;
 	}
@@ -89,7 +108,7 @@ public class HashWordSet implements WordSet{
 	}
 	
 	/**
-	 * Aouch, an iterator. Creating a new class for iterating the hashwordset
+	 * Iterator for the hashwordset
 	 */
 	@Override
 	public Iterator<Word> iterator() {
@@ -137,7 +156,7 @@ public class HashWordSet implements WordSet{
 					node = buckets[index];					
 				}
 				else {
-					return null;		// No more words = return null
+					return null;		// No more words 
 				}
 			}
 			

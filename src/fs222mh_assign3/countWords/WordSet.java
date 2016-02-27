@@ -1,5 +1,5 @@
 /**
- * This an interface given to us by teachers. This interface will be implementing in different ways
+ * This an interface given to us by teachers. 
  */
 
 package fs222mh_assign3.countWords;

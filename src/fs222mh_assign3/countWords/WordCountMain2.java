@@ -68,7 +68,7 @@ public class WordCountMain2 {
 		System.out.println();
 		
 		/**
-		 * trying the hashiterator
+		 * the hashiterator, not alphabetically though
 		 */
 		iterator = hash.iterator();
 		
