@@ -2,6 +2,7 @@ package fs222mh_assign4.ex1;
 /**
  * Copied LinkedQueue from assignment 2. Refined it with the comments given by teachers.
  * Changed it to use <T>
+ * Used the downcast to <T> and suppressed the warnings, not sure that's right
  */
 
 import java.util.Iterator;
@@ -44,7 +45,7 @@ public class LinkedQueue<T> implements Queue<T>{
 	 * Adds an element of the type <code>object</code> at the end of the queue.
 	 */
 	@Override
-	public void enqueue(Object element) {
+	public void enqueue(T element) {
 		if(head == null) {
 			head = new Node(element);
 			tail = head;
@@ -59,24 +60,26 @@ public class LinkedQueue<T> implements Queue<T>{
 	/**
 	 * Returns and removes the first element.
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Object dequeue() throws IndexOutOfBoundsException {
+	public T dequeue() throws IndexOutOfBoundsException {
 		if (size < 1) {
 			throw new IndexOutOfBoundsException();
 		}
 		Object returnObject = head.data;
 		head = head.next;
 		size -= 1;
-		return returnObject;
+		return (T) returnObject;
 	}
 
 	/**
 	 * Returns the first object without removing it.
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Object first() throws IndexOutOfBoundsException{
+	public T first() throws IndexOutOfBoundsException{
 		if (size > 0) {
-			return head.data;
+			return (T) head.data;
 		}
 		
 		throw new IndexOutOfBoundsException("The queue is empty");
@@ -85,10 +88,11 @@ public class LinkedQueue<T> implements Queue<T>{
 	/**
 	 * Return the last object without removing it
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
-	public Object last() throws IndexOutOfBoundsException {
+	public T last() throws IndexOutOfBoundsException {
 		if (size > 0) {
-			return tail.data;
+			return (T) tail.data;
 		}
 		throw new IndexOutOfBoundsException("The queue is empty");
 	}
@@ -113,7 +117,7 @@ public class LinkedQueue<T> implements Queue<T>{
 	/**
 	 * Class for the Iterator
 	 */
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public Iterator iterator() {
 		Iterator it = new Iterator() {
