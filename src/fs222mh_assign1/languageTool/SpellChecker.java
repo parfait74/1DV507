@@ -1,8 +1,4 @@
-/**
- * Redone from ex6 since I got the feedback to wrap the JLanguateTool in it's own class.
- * 
- */
-package fs222mh_assign1.ex10;
+package fs222mh_assign1.languageTool;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,15 +9,8 @@ import org.languagetool.JLanguageTool;
 import org.languagetool.language.BritishEnglish;
 import org.languagetool.rules.RuleMatch;
 
-/**
- * SpellChecker Class implementing JLanguageTool
- * @author fredrik
- *
- */
-
 public class SpellChecker {
-	
-	JLanguageTool jLang;
+JLanguageTool jLang;
 	
 	/**
 	 * Constructor

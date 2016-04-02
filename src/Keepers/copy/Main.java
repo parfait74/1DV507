@@ -3,7 +3,7 @@
  * But I would not have this in this way if I didn't had to turn in on second opportunity.
  */
 
-package fs222mh_assign1.ex10;
+package Keepers.copy;
 
 public class Main {
 

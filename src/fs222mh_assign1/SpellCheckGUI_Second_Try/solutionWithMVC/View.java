@@ -1,4 +1,4 @@
-package fs222mh_assign1.ex10;
+package fs222mh_assign1.SpellCheckGUI_Second_Try.solutionWithMVC;
 
 import java.io.File;
 import java.io.FileNotFoundException;
